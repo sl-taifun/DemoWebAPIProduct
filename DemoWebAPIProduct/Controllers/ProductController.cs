@@ -21,21 +21,32 @@ namespace DemoWebAPI.Controllers
 
         [HttpGet]
         [ProducesResponseType(200, Type = typeof(ProductListDTO))]
-        [ProducesResponseType(404)]
         [Produces("application/json")]
-        public IActionResult GetAll()
+        public IActionResult GetAll([FromQuery(Name = "in-stock")] bool? inStock)
         {
-            var products = _productRepository.GetAll().ToList();
+            IEnumerable<Product> products;
+
+            if (inStock.HasValue)
+            {
+                products = _productRepository.GetByInStock(inStock.Value);
+            }
+            else
+            {
+                products = _productRepository.GetAll();
+            }
+
+            var productList = products.ToList();
 
             var result = new ProductListDTO
             {
-                Count = products.Count,
-                TotalPrice = products.Sum(p => p.Prix),
-                Products = products.Select(p => new ProductSummaryDTO(p))
+                Count = productList.Count,
+                TotalPrice = productList.Sum(p => p.Prix),
+                Products = productList.Select(p => new ProductSummaryDTO(p))
             };
 
             return Ok(result);
         }
+
 
 
         [HttpGet("{id}")]
@@ -88,24 +99,6 @@ namespace DemoWebAPI.Controllers
 
             return Ok(result);
         }
-
-        [HttpGet("in-stock/{inStock}")]
-        [ProducesResponseType(200, Type = typeof(ProductListDTO))]
-        [Produces("application/json")]
-        public IActionResult GetByInStock(bool inStock)
-        {
-            var products = _productRepository.GetByInStock(inStock).ToList();
-
-            var result = new ProductListDTO
-            {
-                Count = products.Count,
-                TotalPrice = products.Sum(p => p.Prix),
-                Products = products.Select(p => new ProductSummaryDTO(p))
-            };
-
-            return Ok(result);
-        }
-
 
     }
 }
