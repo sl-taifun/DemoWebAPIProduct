@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36127.28
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoWebAPIProduct", "DemoWebAPIProduct\DemoWebAPIProduct.csproj", "{EC654D99-7899-4C30-9689-60E8CF993A5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FAKEDAL", "FAKEDAL\FAKEDAL.csproj", "{8CC9D22B-BED1-4325-8EBE-BA228CB66A99}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC654D99-7899-4C30-9689-60E8CF993A5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC654D99-7899-4C30-9689-60E8CF993A5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC654D99-7899-4C30-9689-60E8CF993A5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC654D99-7899-4C30-9689-60E8CF993A5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CC9D22B-BED1-4325-8EBE-BA228CB66A99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CC9D22B-BED1-4325-8EBE-BA228CB66A99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CC9D22B-BED1-4325-8EBE-BA228CB66A99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CC9D22B-BED1-4325-8EBE-BA228CB66A99}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {83795476-6C74-4A39-9233-B8C93E3858E6}
+	EndGlobalSection
+EndGlobal
